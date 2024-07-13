@@ -9,6 +9,8 @@ const mongoStore = require("connect-mongo")
 const multer = require('multer') //part of image upload stretch
 
 //CONTROLLERS
+const authController = require("./controllers/auth.js")
+const mushController = require("./controllers/mushroom.js")
 
 //CONSTANTS
 const app = express()
@@ -31,11 +33,15 @@ app.use(
 )
 
 //ROUTES
-app.get("/", (req, res) => {
+app.get("/", (req, res) => { //landing page
     res.render("index.ejs")
 })
 
-app.get("*", (req, res) => {
+app.use("/auth", authController)
+
+app.use("/mushrooms", mushController)
+
+app.get("*", (req, res) => { //404 page
     res.render("404.ejs")
 })
 
