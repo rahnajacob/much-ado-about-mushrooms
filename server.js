@@ -34,7 +34,9 @@ app.use(
 
 //ROUTES
 app.get("/", (req, res) => { //landing page
-    res.render("index.ejs")
+    res.render("index.ejs", {
+        user: req.session.user
+    })
 })
 
 app.use("/auth", authController)
