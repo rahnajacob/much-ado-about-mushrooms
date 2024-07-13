@@ -7,7 +7,6 @@ const router = express.Router()
 const User = require("../models/user.js")
 
 //ROUTES
-
 //Sign Up (Form + Post)
 router.get("/sign-up", (req, res) => {
     res.render("auth/sign-up.ejs")
@@ -35,7 +34,7 @@ router.post("/sign-up", async (req, res) => {
     }
 })
 
-//Sign in (Form + )
+//Sign in (Form + Post)
 router.get("/sign-in", (req, res) => {
     res.render("auth/sign-in.ejs")
 })

@@ -7,6 +7,8 @@ const morgan = require("morgan")
 const session = require("express-session")
 const mongoStore = require("connect-mongo")
 const multer = require('multer') //part of image upload stretch
+const passUserToView = require("./middleware/pass-user-to-view.js");
+
 
 //CONTROLLERS
 const authController = require("./controllers/auth.js")
@@ -31,6 +33,7 @@ app.use(
         })
     })
 )
+app.use(passUserToView)
 
 //ROUTES
 app.get("/", (req, res) => { //landing page
