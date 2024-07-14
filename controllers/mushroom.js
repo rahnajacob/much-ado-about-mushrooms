@@ -97,7 +97,22 @@ router.put("/:mushroomId", async (req, res) => {
 })
 
 //Delete route
-
+router.delete("/:mushroomId", async (req, res) => {
+    try {
+        const mushroomId = req.params.mushroomId
+        const mushToDelete = await Mushroom.findById(mushroomId)
+        if (mushToDelete.owner.equals(req.session.user._id)) {
+            await mushToDelete.deleteOne()
+            res.redirect("/mushrooms")
+        } else {
+            res.send("You do not have permission to delete this!")
+            res.redirect("/mushrooms")
+        }
+    } catch (error) {
+        console.log(error.message)
+        res.redirect("/")
+    }
+})
 
 
 
