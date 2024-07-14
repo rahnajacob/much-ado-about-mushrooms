@@ -62,6 +62,40 @@ router.get("/:mushroomId", async (req, res) => {
 })
 
 //Edit mushroom(form + put route)
+router.get("/:mushroomId/edit", async (req, res) => {
+    try {
+        const mushroom = await Mushroom.findById(req.params.mushroomId)
+        if (!mushroom) throw new Error("Mushroom not found!")
+
+        if (mushroom.owner.equals(req.session.user._id)) {
+            res.render("mushrooms/edit.ejs", {mushroom: mushroom})
+        } else {
+            res.redirect(`/mushrooms/${mushroom._id}`)
+        }
+    } catch (error) {
+        console.log(error.message)
+        res.redirect("/mushrooms")
+    }
+})
+
+router.put("/:mushroomId", async (req, res) => {
+    try {
+        const mushToUpdate = await Mushroom.findById(req.params.mushroomId)
+        if (!mushToUpdate) throw new Error("Mushroom not found!")
+
+        if (mushToUpdate.owner.equals(req.session.user._id)) {
+            await mushToUpdate.updateOne(req.body)
+            res.redirect(`/mushrooms/${mushToUpdate._id}`)
+        } else {
+            res.send("You do not have permission to update this!")
+            res.redirect(`/mushrooms/${mushToUpdate._id}`)
+        }
+    } catch (error) {
+        console.log(error.message)
+        res.redirect("/mushrooms")
+    }
+})
+
 //Delete route
 
 

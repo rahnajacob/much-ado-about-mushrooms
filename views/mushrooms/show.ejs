@@ -11,7 +11,7 @@
     <img class="mushroom-show" src="<%=mushroom.image%>" alt="An image of <%=mushroom.comName%>"/>
     <p>Description: <%=mushroom.description%></p>
     <p>Edibility: <%=mushroom.edibility%></p>
-    <%if (mushroom.owner._id.equals(user._id)) {%>
+    <%if ((user._id) && (mushroom.owner._id.equals(user._id))) {%>
         <form action="/mushrooms/<%=mushroom._id%>?_method=DELETE" method="POST">
             <button type="submit">Delete mushroom</button>
         </form>
