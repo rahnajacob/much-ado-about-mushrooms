@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a Mushroom!</title>
+</head>
+
+<body>
+    <form action="/mushrooms" method="POST">
+
+        <label for="sciName">Scientific name: </label>
+        <input type="text" name="sciName" id="sciName" required>
+        <br />
+        <label for="comName">Common name: </label>
+        <input type="text" name="comName" id="comName" required>
+        <br />
+        <label for="image">Link to image: </label>
+        <input type="url" name="image" id="image" required>
+        <br />
+        <label for="edibility">Edibility: </label>
+        <select id="edibility" name="edibility" required>
+            <option value="unknown">Unknown</option>
+            <option value="edible">Edible</option>
+            <option value="selectively-edible">Selectively Edible</option>
+            <option value="inedible/toxic">Inedible or Toxic</option>
+        </select>
+        <br />
+        <label for="description">Please describe the mushroom: </label>
+        <textarea id="description" name="description"></textarea>
+        <br /> <br />
+        <button type="submit">Create</button>
+    </form>
+</body>
+
+</html>

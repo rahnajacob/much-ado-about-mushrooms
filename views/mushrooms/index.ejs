@@ -7,5 +7,14 @@
 </head>
 <body>
     <h2>shrooms list</h2>
+    <ul>
+        <% mushrooms.forEach((mushroom) => { %>
+        <li>
+          <a href="/mushrooms/<%=mushroom._id%>">
+            <%= mushroom.sciName %>, (<%= mushroom.comName %>)
+          </a>
+        </li>
+        <% }) %>
+      </ul>
 </body>
 </html>

@@ -8,7 +8,7 @@ const session = require("express-session")
 const mongoStore = require("connect-mongo")
 const multer = require('multer') //part of image upload stretch
 const passUserToView = require("./middleware/pass-user-to-view.js");
-
+const IsSignedIn = require("./middleware/is-signed-in.js")
 
 //CONTROLLERS
 const authController = require("./controllers/auth.js")
@@ -44,7 +44,7 @@ app.get("/", (req, res) => { //landing page
 
 app.use("/auth", authController)
 
-app.use("/mushrooms", mushController)
+app.use("/mushrooms", IsSignedIn, mushController)
 
 app.get("*", (req, res) => { //404 page
     res.render("404.ejs")
