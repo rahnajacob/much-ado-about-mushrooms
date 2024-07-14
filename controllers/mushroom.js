@@ -42,7 +42,24 @@ router.post("/", async (req, res) => {
 })
 
 //Show route
-
+router.get("/:mushroomId", async (req, res) => {
+    try {
+        const mushroomId = req.params.mushroomId
+        const mushroom = await Mushroom.findById(req.params.mushroomId)
+        if (!mushroom){
+            const error = new Error("Mushroom not found!")
+            error.status = 404
+            throw error
+        }
+        res.render("mushrooms/show.ejs", {mushroom: mushroom})
+    } catch (error) {
+        console.log(error.message)
+        if (error.status === 404) {
+            return res.render("404.ejs")
+        }
+        res.redirect("/")
+    }
+})
 
 //Edit mushroom(form + put route)
 //Delete route

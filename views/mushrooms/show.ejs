@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= mushroom.sciName %></title>
+</head>
+<body>
+    <h2><%= mushroom.sciName%></h2>
+    <h4>Common name: <%=mushroom.comName%></h4>
+    <img class="mushroom-show" src="<%=mushroom.image%>" alt="An image of <%=mushroom.comName%>"/>
+    <p>Description: <%=mushroom.description%></p>
+    <p>Edibility: <%=mushroom.edibility%></p>
+    <%if (mushroom.owner._id.equals(user._id)) {%>
+        <form action="/mushrooms/<%=mushroom._id%>?_method=DELETE" method="POST">
+            <button type="submit">Delete mushroom</button>
+        </form>
+        <button type="button"><a href="/mushrooms/<%=mushroom._id%>/edit">Edit mushroom</a></button> 
+        <!-- change CSS styling to not show underlined link -->
+    <%}%>
+</body>
+</html>
