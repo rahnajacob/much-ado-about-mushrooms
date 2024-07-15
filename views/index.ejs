@@ -8,20 +8,22 @@
 </head>
 
 <body>
-    <h1>Much Ado About Mushrooms</h1>
-    <h3>A website that has information on a few of these little dudes!</h3>
-    <% if (user) { %>
-        <h1>Welcome to the app, <%= user.username %>!</h1>
-        <p>
-            <a href="/auth/sign-out">Sign out</a>
-        </p>
-        <% } else { %>
-            <h1>Welcome to the app, guest.</h1>
-            <p>
-                <a href="/auth/sign-up">Sign up</a> or
-                <a href="/auth/sign-in">Sign in</a>.
-            </p>
-            <% } %>
+    <%- include('./partials/_navbar.ejs') %>
+        <%- include('./partials/_sidebar.ejs') %>
+            <h1>Much Ado About Mushrooms</h1>
+            <h3>A website that has information on a few of these little dudes!</h3>
 </body>
+
+<footer>
+    <div id="footer-left">
+        <p><a href="https://github.com/rahnajacob">An actual link to my Github!</a></p>
+        <p><a href="#">Privacy Policy</a></p>
+        <p><a href="#">About Us</a></p>
+    </div>
+    <div id="footer-disclaimer">
+        <p>Disclaimer: This website does not contain verfied information about the edibility of mushrooms - please do
+            not use it as a guide!</p>
+    </div>
+</footer>
 
 </html>

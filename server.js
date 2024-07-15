@@ -46,6 +46,10 @@ app.use("/auth", authController)
 
 app.use("/mushrooms", IsSignedIn, mushController)
 
+app.get("/references", (req, res) => {
+    res.render("references.ejs")
+})
+
 app.get("*", (req, res) => { //404 page
     res.render("404.ejs")
 })
