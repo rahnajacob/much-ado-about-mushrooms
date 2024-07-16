@@ -15,8 +15,18 @@ const seedDatabase = async () => {
         await mongoose.connect(process.env.MONGODB_URI)
         const deletedUsers = await User.deleteMany()
         const deletedMushrooms = await Mushroom.deleteMany()
+        const users = await User.create(userData)
+        const mushWithOwners = mushroomData.map(mushroom => {
+            mushroom.owner = users[Math.floor(Math.random() * users.length)]._id
+            return mushroom
+        })
+        console.log(`${mushWithOwners.length} mush added`)
+        const mushrooms = await Mushroom.create(mushWithOwners)
+        await mongoose.connection.close()
+        console.log("Seed conn closed")
     } catch (error) {
         console.log(error.message)
+        await mongoose.connection.close()
     }
 }
 
