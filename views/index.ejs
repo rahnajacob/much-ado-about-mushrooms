@@ -13,14 +13,13 @@
             <h1>Much Ado About Mushrooms</h1>
             <h3>A website that has information on a few of these little dudes!</h3>
             <div id="mushDisplay">
-                <!-- mushToDisplay = mushroom[Math.floor(Math.random() * mushroom.length)]
-                < mushroom.sciName%>
-                    </h2>
-                    <h4>Common name: <=mushroom.comName%>
-                    </h4>
-                    <img class="mushroom-show" src="<=mushroom.image%>" alt="An image of <=mushroom.comName%>" />
-                    <p>Description: <=mushroom.description%>
-                    </p> -->
+                <%mushToDisplay = mushrooms[Math.floor(Math.random() * mushrooms.length)]%>
+                <p><%mushToDisplay.sciName%></p>
+                    <p>Common name: <%=mushToDisplay.comName%>
+                    </p>
+                    <img class="mushroom-show" src="<%=mushToDisplay.image%>" alt="An image of <%=mushToDisplay.comName%>" />
+                    <p>Description: <%=mushToDisplay.description%>
+                    </p>
                     <button type="button"><a href="/mushrooms">View index</a></button>
             </div>
 </body>

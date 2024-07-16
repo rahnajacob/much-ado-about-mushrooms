@@ -9,6 +9,7 @@ const mongoStore = require("connect-mongo")
 const multer = require('multer') //part of image upload stretch
 const passUserToView = require("./middleware/pass-user-to-view.js");
 const IsSignedIn = require("./middleware/is-signed-in.js")
+const Mushroom = require("./models/mushroom.js")
 
 //CONTROLLERS
 const authController = require("./controllers/auth.js")
@@ -36,9 +37,11 @@ app.use(
 app.use(passUserToView)
 
 //ROUTES
-app.get("/", (req, res) => { //landing page
+app.get("/", async (req, res) => { //landing page
+    const mushrooms = await Mushroom.find()
     res.render("index.ejs", {
-        user: req.session.user
+        user: req.session.user,
+        mushrooms: mushrooms
     })
 })
 
