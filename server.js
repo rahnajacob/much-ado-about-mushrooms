@@ -18,12 +18,14 @@ const mushController = require("./controllers/mushroom.js")
 //CONSTANTS
 const app = express()
 const port = process.env.PORT ? process.env.PORT : "3000"
+const path = require('path')
 const upload = multer({ dest: 'uploads/' }) //part of image upload stretch
 
 //MIDDLEWARE
 app.use(express.urlencoded({ extended: false }))
 app.use(methodOverride("_method"))
 app.use(morgan("dev"))
+app.use(express.static(path.join(__dirname, "public")))
 app.use(
     session({
         secret: process.env.SESSION_SECRET,

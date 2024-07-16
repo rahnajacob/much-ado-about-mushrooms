@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Permanent+Marker&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Dosis", sans-serif;
+    background-color: rgb(247, 234, 216);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+#topNav {
+    display: flex;
+    max-width: 100%;
+}
+#footer-left {
+   text-decoration: none;
+
+}
+
+#footer-disclaimer{
+    font-size: 1.3em;
+}
+
+#pageHead {
+    font-family: "Permanent Marker", sans-serif;
+    display: flex;
+    justify-content: center;
+    font-size: 3em;
+    margin: 10px 0px 10px 0px;
+}
+
+#pageSubhead {
+    font-family: "Permanent Marker", sans-serif;
+    font-size: 1.5em;
+}
+
+#navTop {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    align-items: center;
+    font-size: 1.3em;
+}
+
+#navSide {
+    height: 50vh;
+    width: 20vh;
+    position: fixed;
+    left: 0; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid black;  
+}
+
+#navSide a{
+    margin: 4px;
+    padding: 8px;
+    text-decoration: none;
+    display: flex;
+    background-color: aqua;
+    align-items: center;
+    border: 1px solid black;
+    justify-content: center;
+}
+
+#mushLandingDisplay {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    border: 2px solid black;
+    width: 80vh;
+    height: 60vh;
+
+}
+
+#mushDispImg {
+    max-width: 20%;
+    max-height: 20%;
+}

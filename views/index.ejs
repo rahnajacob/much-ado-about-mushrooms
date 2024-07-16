@@ -4,23 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
     <title>Much Ado About Mushrooms</title>
 </head>
 
 <body>
     <%- include('./partials/_navbar.ejs') %>
         <%- include('./partials/_sidebar.ejs') %>
-            <h1>Much Ado About Mushrooms</h1>
-            <h3>A website that has information on a few of these little dudes!</h3>
-            <div id="mushDisplay">
+            <h1 id="pageHead">Much Ado About Mushrooms</h1>
+            <h3 id="pageSubhead">A website that has information on a few of these little dudes!</h3>
+            <div id="mushLandingDisplay">
                 <%mushToDisplay = mushrooms[Math.floor(Math.random() * mushrooms.length)]%>
-                <p><%mushToDisplay.sciName%></p>
-                    <p>Common name: <%=mushToDisplay.comName%>
+                <p>Mushroom Of The Day</p>
+                <p id="mushDispSciName"><%=mushToDisplay.sciName.toUpperCase()%></p>
+                    <img id="mushDispImg" src="<%=mushToDisplay.image%>" alt="An image of <%=mushToDisplay.comName%>" />
+                    <p id="mushDispDesc">Description: <%=mushToDisplay.description%>
                     </p>
-                    <img class="mushroom-show" src="<%=mushToDisplay.image%>" alt="An image of <%=mushToDisplay.comName%>" />
-                    <p>Description: <%=mushToDisplay.description%>
-                    </p>
-                    <button type="button"><a href="/mushrooms">View index</a></button>
+                    <button type="button" id="mushDispIdxBtn"><a href="/mushrooms">View index</a></button>
             </div>
 </body>
 

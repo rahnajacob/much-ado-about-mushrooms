@@ -8,7 +8,7 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <%- include('../partials/_sidebar.ejs') %>
-    <h2><%= mushroom.sciName%></h2>
+    <h2><%= mushroom.sciName.toUpperCase()%></h2>
     <h4>Common name: <%=mushroom.comName%></h4>
     <img class="mushroom-show" src="<%=mushroom.image%>" alt="An image of <%=mushroom.comName%>"/>
     <p>Description: <%=mushroom.description%></p>
