@@ -4,13 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css">
   <title>Mushrooms List</title>
 </head>
 
 <body>
   <%- include('../partials/_navbar.ejs') %>
     <%- include('../partials/_sidebar.ejs') %>
-      <h2>shrooms list</h2>
+      <h2>Mushroom Index</h2>
+      <div id="mushMainIdx">
       <ul>
         <% mushrooms.forEach((mushroom)=> { %>
           <%mushrooms.sort(function (a, b) {%>
@@ -29,6 +31,7 @@
              </li>
         <% }) %>
       </ul>
+      </div>
 </body>
 <footer>
   <div id="footer-left">
@@ -37,8 +40,8 @@
     <p><a href="#">About Us</a></p>
   </div>
   <div id="footer-disclaimer">
-    <p>Disclaimer: This website does not contain verfied information about the edibility of mushrooms - please do
-      not use it as a guide!</p>
+    <p>Disclaimer: This website does not contain verfied information about the edibility of mushrooms - <u>please do
+      not use it as a guide!</u></p>
   </div>
 </footer>
 

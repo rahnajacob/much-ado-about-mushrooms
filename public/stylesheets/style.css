@@ -9,30 +9,47 @@ body {
     background-color: rgb(247, 234, 216);
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    margin: 0px;
 }
 
 footer {
-    position: fixed;
-    bottom: 0;
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.6);
     color: white;
 }
 
-#topNav {
+.MushMedAndRecWrapper {
+    flex-basis: 15vw;
+}
+
+.mainDivWrapper {
     display: flex;
-    max-width: 100%;
-}
-#footer-left {
-   text-decoration: none;
-
+    gap: 50px;
+    flex-grow: 1;
 }
 
-#footer-disclaimer{
+.subMainDivWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    flex-grow: 1;
+    padding: 0 1rem 1rem 0;
+}
+
+/* .subDivWrapper {
+    /* display: flex;
+    flex-direction: column; */
+*/ #footer-left a {
+    text-decoration: none;
+    color: white;
+}
+
+#footer-disclaimer {
     font-size: 1.3em;
 }
 
@@ -41,7 +58,8 @@ footer {
     display: flex;
     justify-content: center;
     font-size: 3em;
-    margin: 10px 0px 10px 0px;
+    margin: 0px 0px 10px 0px;
+    line-height: 0.9;
 }
 
 #pageSubhead {
@@ -49,8 +67,15 @@ footer {
     font-size: 1.5em;
 }
 
-#navTop {
+#topNav {
+    display: flex;
     width: 100%;
+    margin-top: 10px;
+    justify-content: flex-end;
+}
+
+#navTop {
+    width: 200px;
     display: flex;
     justify-content: flex-end;
     gap: 10px;
@@ -59,25 +84,36 @@ footer {
 }
 
 #navSide {
-    height: 50vh;
-    width: 20vh;
-    position: fixed;
-    left: 0; 
+    height: 45vh;
+    width: 30vh;
+    /* position: fixed; */
+    left: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 1px solid black;  
+    border: 1px solid black;
+    border-radius: 5%;
+    margin-left: 3vh;
+    background-color: rgba (255, 255, 255, 0.5);
 }
 
-#navSide a{
-    margin: 4px;
-    padding: 8px;
+#navSide a {
+    margin: 0px 4px 0px 4px;
+    padding: 12px;
     text-decoration: none;
     display: flex;
     background-color: aqua;
     align-items: center;
     border: 1px solid black;
+    border-radius: 5px;
     justify-content: center;
+    font-size: 1.4em;
+    text-align: center;
+}
+
+#navSideHeader {
+    text-align: center;
+    font-size: 2em;
 }
 
 #mushLandingDisplay {
@@ -87,12 +123,16 @@ footer {
     align-items: center;
     flex-wrap: wrap;
     border: 2px solid black;
-    width: 80vh;
-    height: 60vh;
+    min-height: 60vh;
 
 }
 
 #mushDispImg {
-    max-width: 20%;
-    max-height: 20%;
+    height: auto;
+    max-width: 30%;
+}
+
+#mushMainIdx {
+    display: flex;
+    flex-wrap: wrap;
 }
