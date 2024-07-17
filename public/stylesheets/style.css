@@ -33,10 +33,9 @@ footer {
     text-align: center;
 }
 
-/* Below: landing page (index.ejs) */
-
-.MushMedAndRecWrapper {
-    flex-basis: 15vw;
+.navSideWrapper {
+    display: flex;
+    align-items: center;
 }
 
 .mainDivWrapper {
@@ -45,13 +44,20 @@ footer {
     flex-grow: 1;
 }
 
+/* Below: landing page (index.ejs) */
+
 #pageHead {
     font-family: "Permanent Marker", sans-serif;
     display: flex;
     justify-content: center;
     font-size: 3em;
-    margin: 0px 0px 10px 0px;
+    margin-bottom: 10px;
     line-height: 0.9;
+    margin-top: -2vh;
+}
+
+.MushMedAndRecWrapper {
+    flex-basis: 30vw;
 }
 
 #pageSubhead {
@@ -68,12 +74,17 @@ footer {
 }
 
 #navTop {
-    width: 200px;
+    width: 400px;
     display: flex;
     justify-content: flex-end;
     gap: 10px;
-    align-items: center;
+    padding-right: 1vw;
     font-size: 1.3em;
+}
+
+#navTop a{
+    margin-top: 2vh;
+    text-decoration: none;
 }
 
 #navSide {
@@ -124,18 +135,55 @@ footer {
     align-items: center;
     flex-wrap: wrap;
     border: 2px solid black;
-    min-height: 60vh;
+    min-height: 50vh;
+    max-height: 65vh;
+    min-width: 60vw;
 }
+
+.mushLandDispContOne{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    min-width: 100%;
+}
+
+#mushDispSciName{
+    margin: 0 auto;
+    max-height: 5vh;
+}
+
 
 #mushDispImg {
-    height: auto;
-    max-width: 30%;
+    width: auto;
+    max-height: 38vh;
+    margin-left: 1vw;
 }
 
-/* Below: Mushrooms (index.ejs) */
-
-#mushMainIdx {
+.mushLandDispContTwo {
     display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
     flex-wrap: wrap;
 }
 
+#mushDispDesc {
+    max-width: 35%;
+}
+
+#mushDispIdxBtn {
+    max-height: 6vh;
+    margin: 2vh auto;
+    padding: 0 3vw;
+}
+
+
+/* Below: Mushrooms (index.ejs) */
+
+.mushMainIdx {
+    columns: 3;
+    line-height: 3vh;
+}
+
+.mushMainIdxList {
+    margin: 0px;
+}

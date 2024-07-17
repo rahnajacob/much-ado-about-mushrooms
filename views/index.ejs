@@ -20,15 +20,18 @@
                         <div id="mushLandingDisplay">
                             <%mushToDisplay=mushrooms[Math.floor(Math.random() * mushrooms.length)]%>
                                 <p>Mushroom Of The Day</p>
+                                <div class="mushLandDispContOne">
                                 <p id="mushDispSciName">
                                     <%=mushToDisplay.sciName.toUpperCase()%>
                                 </p>
                                 <img id="mushDispImg" src="<%=mushToDisplay.image%>"
                                     alt="An image of <%=mushToDisplay.comName%>" />
+                                </div>
+                                <div class="mushLandDispContTwo">
                                 <p id="mushDispDesc">Description: <%=mushToDisplay.description%>
                                 </p>
                                 <button type="button" id="mushDispIdxBtn"><a href="/mushrooms">View index</a></button>
-
+                            </div>
                         </div>
                     </div>
                 </div>
