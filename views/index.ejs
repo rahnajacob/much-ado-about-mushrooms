@@ -19,17 +19,16 @@
                         <h3 id="pageSubhead">A website that has information on a few of these little dudes!</h3>
                         <div id="mushLandingDisplay">
                             <%mushToDisplay=mushrooms[Math.floor(Math.random() * mushrooms.length)]%>
-                                <p>Mushroom Of The Day</p>
+                                <p id="mushDispSciName">Mushroom Of The Day: <%=mushToDisplay.sciName.toUpperCase()%>
+                                </p>
                                 <div class="mushLandDispContOne">
-                                    <p id="mushDispSciName">
-                                        <%=mushToDisplay.sciName.toUpperCase()%>
-                                    </p>
                                     <img id="mushDispImg" src="<%=mushToDisplay.image%>"
                                         alt="An image of <%=mushToDisplay.comName%>" />
+                                    <p id="mushDispDesc"><%=mushToDisplay.description%>
+                                    </p>
                                 </div>
                                 <div class="mushLandDispContTwo">
-                                    <p id="mushDispDesc">Description: <%=mushToDisplay.description%>
-                                    </p>
+
                                     <button type="button" id="mushDispIdxBtn"><a href="/mushrooms">View
                                             index</a></button>
                                 </div>
