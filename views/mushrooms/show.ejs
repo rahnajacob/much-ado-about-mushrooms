@@ -1,37 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/style.css">
-    <title><%= mushroom.sciName %></title>
+    <title>
+        <%= mushroom.sciName %>
+    </title>
 </head>
+
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <%- include('../partials/_sidebar.ejs') %>
-    <h2><%= mushroom.sciName.toUpperCase()%></h2>
-    <h4>Common name: <%=mushroom.comName%></h4>
-    <img class="mushroom-show" src="<%=mushroom.image%>" alt="An image of <%=mushroom.comName%>"/>
-    <p>Description: <%=mushroom.description%></p>
-    <p>Edibility: <%=mushroom.edibility%></p>
-    <%if ((user) && (mushroom.owner._id.equals(user._id))) {%>
-        <form action="/mushrooms/<%=mushroom._id%>?_method=DELETE" method="POST">
-            <button type="submit">Delete mushroom</button>
-        </form>
-        <button type="button"><a href="/mushrooms/<%=mushroom._id%>/edit">Edit mushroom</a></button> 
-        <!-- change CSS styling to not show underlined link -->
-    <%}%>
+        <div class="mainDivWrapper">
+            <%- include('../partials/_sidebar.ejs') %>
+                <div class="subMainDivWrapper">
+                    <h1 id="pageHead">Much Ado About Mushrooms</h1>
+                    <h2>
+                        <%= mushroom.sciName.toUpperCase()%>
+                    </h2>
+                    <h4>Common name: <%=mushroom.comName%>
+                    </h4>
+                    <div class="mushShowPageWrapper">
+                    <div class="mushShowPage">
+                    <img class="mushroom-show" src="<%=mushroom.image%>" alt="An image of <%=mushroom.comName%>" />
+                    <div class="mushShowDescEdBtns" id="mushShowDescEd">
+                    <p id="mushDesc">Description: <%=mushroom.description%>
+                    </p>
+                    <p>Edibility: <%=mushroom.edibility%>
+                    </p>
+                    </div>
+                    </div>
+                    <div class="mushOwnerBtns">
+                    <%if ((user) && (mushroom.owner._id.equals(user._id))) {%>
+                        <form action="/mushrooms/<%=mushroom._id%>?_method=DELETE" method="POST">
+                            <button type="submit">Delete mushroom</button>
+                        </form>
+                        <button type="button"><a href="/mushrooms/<%=mushroom._id%>/edit">Edit mushroom</a></button>
+                        <!-- change CSS styling to not show underlined link -->
+                        <%}%>
+                    </div>
+                    </div>
+                </div>
+                </div>
+        </div>
+        <footer>
+            <div id="footer-left">
+                <p><a href="https://github.com/rahnajacob">An actual link to my Github!</a></p>
+                <p><a href="#">Privacy Policy</a></p>
+                <p><a href="#">About Us</a></p>
+            </div>
+            <div id="footer-disclaimer">
+                <p>Disclaimer: This website does not contain verfied information about the edibility
+                    of mushrooms - <u>please do
+                        not use it as a guide!</u></p>
+            </div>
 
-<footer>
-    <div id="footer-left">
-        <p><a href="https://github.com/rahnajacob">An actual link to my Github!</a></p>
-        <p><a href="#">Privacy Policy</a></p>
-        <p><a href="#">About Us</a></p>
-    </div>
-    <div id="footer-disclaimer">
-        <p>Disclaimer: This website does not contain verfied information about the edibility of mushrooms - <u>please do
-            not use it as a guide!</u></p>
-    </div>
-</footer>
+        </footer>
 </body>
+
 </html>

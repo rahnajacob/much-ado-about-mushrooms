@@ -187,3 +187,39 @@ footer {
 .mushMainIdxList {
     margin: 0px;
 }
+
+/* Below: Mushroom (show.ejs) */
+
+.mushShowPage {
+    display:flex;
+    max-width: 65%;
+    gap: 10px;
+}
+
+.mushroom-show {
+    height: 50vh;
+    width: auto;
+}
+
+.mushShowDescEdBtns, #mushShowDescEd {
+    display:flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 5vh;
+}
+
+#mushDesc {
+    min-width: 30vw;
+}
+
+.mushOwnerBtns {
+    display: flex;
+    margin-top: 2vh;
+    justify-content: start;
+    margin-left: 20%;
+    gap: 3vw;
+}
+
+.mushOwnerBtns a{
+    text-decoration: none;
+}

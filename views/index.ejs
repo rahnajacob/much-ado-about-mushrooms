@@ -12,7 +12,7 @@
     <%- include('./partials/_navbar.ejs') %>
         <div class="mainDivWrapper">
             <%- include('./partials/_sidebar.ejs') %>
-                <div class="subMainDivWrapper"> 
+                <div class="subMainDivWrapper">
                     <!-- /*change to section*/ -->
                     <h1 id="pageHead">Much Ado About Mushrooms</h1>
                     <div class="subDivWrapper">
@@ -21,17 +21,18 @@
                             <%mushToDisplay=mushrooms[Math.floor(Math.random() * mushrooms.length)]%>
                                 <p>Mushroom Of The Day</p>
                                 <div class="mushLandDispContOne">
-                                <p id="mushDispSciName">
-                                    <%=mushToDisplay.sciName.toUpperCase()%>
-                                </p>
-                                <img id="mushDispImg" src="<%=mushToDisplay.image%>"
-                                    alt="An image of <%=mushToDisplay.comName%>" />
+                                    <p id="mushDispSciName">
+                                        <%=mushToDisplay.sciName.toUpperCase()%>
+                                    </p>
+                                    <img id="mushDispImg" src="<%=mushToDisplay.image%>"
+                                        alt="An image of <%=mushToDisplay.comName%>" />
                                 </div>
                                 <div class="mushLandDispContTwo">
-                                <p id="mushDispDesc">Description: <%=mushToDisplay.description%>
-                                </p>
-                                <button type="button" id="mushDispIdxBtn"><a href="/mushrooms">View index</a></button>
-                            </div>
+                                    <p id="mushDispDesc">Description: <%=mushToDisplay.description%>
+                                    </p>
+                                    <button type="button" id="mushDispIdxBtn"><a href="/mushrooms">View
+                                            index</a></button>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -50,7 +51,8 @@
             <div id="footer-disclaimer">
                 <p>Disclaimer: This website does not contain verfied information about the edibility of mushrooms -
                     <u>please do
-                        not use it as a guide!</u></p>
+                        not use it as a guide!</u>
+                </p>
             </div>
         </footer>
 </body>
