@@ -1,30 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/style.css">
     <title>References</title>
 </head>
+
 <body>
     <%- include('./partials/_navbar.ejs') %>
-    <%- include('./partials/_sidebar.ejs') %>
-    <h1>References</h1>
-    <h3>All the information and graphics on this page would not have been possible without: </h3>
-    <ul>
-        <li><a href="https://www.mushroom.world/">Mushroom World</a></li>
-        <p>All the data about every single mushroom on my website comes from here. Due to the constraints of the time limit I had for my project, I was able to use only a limited amount of the information they have. Please give them a visit!</p>
-    </ul>
-<footer>
-    <div id="footer-left">
-        <p><a href="https://github.com/rahnajacob">An actual link to my Github!</a></p>
-        <p><a href="#">Privacy Policy</a></p>
-        <p><a href="#">About Us</a></p>
-    </div>
-    <div id="footer-disclaimer">
-        <p>Disclaimer: This website does not contain verfied information about the edibility of mushrooms - <u>please do
-            not use it as a guide!</u></p>
-    </div>
-</footer>
+        <div class="mainDivWrapper">
+            <%- include('./partials/_sidebar.ejs') %>
+                <div class="subMainDivWrapper">
+                    <h1 id="pageHead">Much Ado About Mushrooms</h1>
+                    <h1>References</h1>
+                    <h3>All the information and graphics on this page would not have been possible without: </h3>
+                    <ul>
+                        <li><a href="https://www.mushroom.world/">Mushroom World</a></li>
+                        <p>All the data about every single mushroom on my website comes from here. Due to the
+                            constraints of the time limit I had for my project, I was able to use only a limited amount
+                            of the information they have. Please give them a visit!</p>
+                        <li>Two very patient instructors - thanks! 😀 </li>
+                    </ul>
+                </div>
+        </div>
+        <footer>
+            <div id="footer-left">
+                <p><a href="https://github.com/rahnajacob">An actual link to my Github!</a></p>
+                <p><a href="#">Privacy Policy</a></p>
+                <p><a href="#">About Us</a></p>
+            </div>
+            <div id="footer-disclaimer">
+                <p>Disclaimer: This website does not contain verfied information about the edibility of
+                    mushrooms - <u>please do
+                        not use it as a guide!</u></p>
+            </div>
+        </footer>
 </body>
+
 </html>
