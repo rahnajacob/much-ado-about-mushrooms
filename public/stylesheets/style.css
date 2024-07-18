@@ -50,10 +50,10 @@ footer {
     font-family: "Permanent Marker", sans-serif;
     display: flex;
     justify-content: center;
-    font-size: 3em;
+    font-size: 3.2em;
     margin-bottom: 10px;
     line-height: 0.9;
-    margin-top: -2vh;
+    margin-top: -4vh;
 }
 
 .MushMedAndRecWrapper {
@@ -224,9 +224,9 @@ footer {
     text-decoration: none;
 }
 
-/* Below: Mushroom (new.ejs add form) */
+/* Below: Mushroom (new.ejs add form, edit.ejs edit form) */
 
-.mushAddForm {
+.mushAddForm, .mushEditForm {
     display: flex;
     flex-direction:column;
     gap: 4vh;
@@ -235,32 +235,32 @@ footer {
     margin-left: -4vw;
 }
 
-.mushAddWrp1 {
+.mushAddWrp1, .mushEditWrp1 {
     display: flex;
     justify-content: space-around;
 }
 
-.mushAddWrp2 {
+.mushAddWrp2, .mushEditWrp2 {
     display: flex;
     justify-content: space-around;
 }
 
-.mushAddWrp3 {
+.mushAddWrp3, .mushEditWrp3 {
     display: flex;
     justify-content: space-around;
 }
 
-.mushAddWrp4 {
+.mushAddWrp4, .mushEditWrp4 {
     display: flex;
     justify-content: space-around;
 }
 
-.mushAddWrp5 {
+.mushAddWrp5, .mushEditWrp5 {
     display: flex;
     justify-content: space-around;
 }
 
-#mushAddFormBtn {
+.mushFormBtn {
     margin: 0 auto;
     padding: 3%;
 }
