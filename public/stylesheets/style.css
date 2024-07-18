@@ -52,7 +52,7 @@ button {
     font-size: 1.2em;
 }
 
-button a{
+button a {
     text-decoration: none;
     color: white;
 }
@@ -95,7 +95,7 @@ button a{
     font-size: 1.3em;
 }
 
-#navTop a{
+#navTop a {
     margin-top: 2vh;
     text-decoration: none;
 }
@@ -157,7 +157,7 @@ button a{
     background-color: rgba(187, 148, 87, 0.3);
 }
 
-.mushLandDispContOne{
+.mushLandDispContOne {
     display: flex;
     justify-content: space-evenly;
     min-width: 60%;
@@ -166,11 +166,10 @@ button a{
     gap: 2vw;
 }
 
-#mushDispSciName{
+#mushDispSciName {
     font-size: 1.3em;
     font-weight: bold;
 }
-
 
 #mushDispImg {
     width: auto;
@@ -188,7 +187,7 @@ button a{
 #mushDispDesc {
     max-width: 45%;
     font-size: 1.2em;
-    margin: auto 0 ;
+    margin: auto 0;
     line-height: 115%;
 }
 
@@ -203,7 +202,9 @@ button a{
 
 .mushMainIdx {
     columns: 3;
-    line-height: 3vh;
+    line-height: 2.9vh;
+    background-color: rgba(187, 148, 87, 0.2);
+    border-radius: 15px;
 }
 
 .mushMainIdxList {
@@ -213,7 +214,7 @@ button a{
 /* Below: Mushroom (show.ejs) */
 
 .mushShowPage {
-    display:flex;
+    display: flex;
     max-width: 65%;
     gap: 10px;
 }
@@ -223,11 +224,16 @@ button a{
     width: auto;
 }
 
-.mushShowDescEdBtns, #mushShowDescEd {
-    display:flex;
+.mushShowSciName {
+    margin-bottom: 1vh;
+}
+
+.mushShowDescEdBtns,
+#mushShowDescEd {
+    display: flex;
     flex-direction: column;
     justify-content: start;
-    gap: 5vh;
+    font-size: 1.4em;
 }
 
 #mushDesc {
@@ -242,42 +248,49 @@ button a{
     gap: 3vw;
 }
 
-.mushOwnerBtns a{
+.mushOwnerBtns a {
     text-decoration: none;
 }
 
 /* Below: Mushroom (new.ejs add form, edit.ejs edit form) */
 
-.mushAddForm, .mushEditForm {
+.mushAddForm,
+.mushEditForm {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     gap: 4vh;
     min-width: 30vw;
     margin-top: 10vh;
     margin-left: -4vw;
+    font-size: 1.3em;
 }
 
-.mushAddWrp1, .mushEditWrp1 {
+.mushAddWrp1,
+.mushEditWrp1 {
     display: flex;
     justify-content: space-around;
 }
 
-.mushAddWrp2, .mushEditWrp2 {
+.mushAddWrp2,
+.mushEditWrp2 {
     display: flex;
     justify-content: space-around;
 }
 
-.mushAddWrp3, .mushEditWrp3 {
+.mushAddWrp3,
+.mushEditWrp3 {
     display: flex;
     justify-content: space-around;
 }
 
-.mushAddWrp4, .mushEditWrp4 {
+.mushAddWrp4,
+.mushEditWrp4 {
     display: flex;
     justify-content: space-around;
 }
 
-.mushAddWrp5, .mushEditWrp5 {
+.mushAddWrp5,
+.mushEditWrp5 {
     display: flex;
     justify-content: space-around;
 }
@@ -285,4 +298,48 @@ button a{
 .mushFormBtn {
     margin: 0 auto;
     padding: 3%;
+}
+
+/* Below: Reference page */
+
+.refInfo {
+    font-size: 1.4em;
+}
+
+/* Below: 404 page */
+
+.pageNFInfo {
+    margin-left: -2vw;
+}
+
+/* Below: sign in/sign up pages */
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    min-height: 40vh;
+    justify-content: space-evenly;
+}
+
+.loginForm1 {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+}
+
+.loginForm2 {
+    margin-top: 3vh;
+}
+
+.loginForm1a, .loginForm1b {
+    display: flex;
+    gap: 3vw;
+    font-size: 1.4em;
+    margin-left: -2vw;
+}
+
+.loginForm1b1, .loginForm1b2 {
+    display: flex;
+    gap: 3.3vw;
+    margin-bottom: 4vh;
 }

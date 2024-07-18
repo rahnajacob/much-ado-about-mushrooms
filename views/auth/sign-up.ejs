@@ -1,43 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <title>Sign up!</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title>Sign up!</title>
 </head>
+
 <body>
   <%- include('../partials/_navbar.ejs') %>
-    <%- include('../partials/_sidebar.ejs') %>
-    <h1>Create a new account!</h1>
-  <form action="/auth/sign-up" method="POST">
-    <label for="username">Username:</label>
-    <input type="text" name="username" id="username" required />
-    <br />
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password" required minlength="6" title="Please use a minimum of 6 characters."/>
-    <br />
-    <label for="confirmPassword">Confirm Password:</label>
-    <input 
-      type="password"
-      name="confirmPassword"
-      id="confirmPassword"
-      required 
-    />
-    <br />
-    <button type="submit">Sign up</button>
-  </form>
+    <div class="mainDivWrapper">
+      <%- include('../partials/_sidebar.ejs') %>
+        <div class="subMainDivWrapper">
+          <h1 id="pageHead">Much Ado About Mushrooms</h1>
+          <h1>Create a new account!</h1>
+          <div class="loginForm">
+            <form action="/auth/sign-up" method="POST">
+              <div class=" loginForm1a">
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username" required />
+              </div>
+              <br />
+              <div class=" loginForm1b">
+                <div class="loginForm1b1">
+                  <label for="password">Password:</label>
+                  <input type="password" name="password" id="password" required minlength="6"
+                    title="Please use a minimum of 6 characters." />
+                </div>
+                <br />
+                <div class="loginForm1b2">
+                  <label for="confirmPassword">Confirm Password:</label>
+                  <input type="password" name="confirmPassword" id="confirmPassword" required />
+                </div>
+                <br />
+              </div>
+              <div class="loginForm2">
+                <button type="submit">Sign up</button>
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>
 
-<footer>
-  <div id="footer-left">
-      <p><a href="https://github.com/rahnajacob">An actual link to my Github!</a></p>
-      <p><a href="#">Privacy Policy</a></p>
-      <p><a href="#">About Us</a></p>
-  </div>
-  <div id="footer-disclaimer">
-      <p>Disclaimer: This website does not contain verfied information about the edibility of mushrooms - <u>please do
-        not use it as a guide!</u></p>
-  </div>
-</footer>
+    <footer>
+      <div id="footer-left">
+        <p><a href="https://github.com/rahnajacob">An actual link to my Github!</a></p>
+        <p><a href="#">Privacy Policy</a></p>
+        <p><a href="#">About Us</a></p>
+      </div>
+      <div id="footer-disclaimer">
+        <p>Disclaimer: This website does not contain verfied information about the edibility of mushrooms -
+          <u>please do
+            not use it as a guide!</u>
+        </p>
+      </div>
+    </footer>
 </body>
+
 </html>

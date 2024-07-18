@@ -16,18 +16,18 @@
             <%- include('../partials/_sidebar.ejs') %>
                 <div class="subMainDivWrapper">
                     <h1 id="pageHead">Much Ado About Mushrooms</h1>
-                    <h2>
-                        <%= mushroom.sciName.toUpperCase()%>
+                    <h2 class="mushShowSciName"><strong>
+                        <%= mushroom.sciName.toUpperCase()%></strong>
                     </h2>
-                    <h4>Common name: <%=mushroom.comName%>
-                    </h4>
+                    <h3><strong>Common name: <%=mushroom.comName%></strong>
+                    </h3>
                     <div class="mushShowPageWrapper">
                     <div class="mushShowPage">
                     <img class="mushroom-show" src="<%=mushroom.image%>" alt="An image of <%=mushroom.comName%>" />
                     <div class="mushShowDescEdBtns" id="mushShowDescEd">
-                    <p id="mushDesc">Description: <%=mushroom.description%>
+                    <p id="mushDesc"><u><strong>Description:</strong></u> <%=mushroom.description%>
                     </p>
-                    <p>Edibility: <%=mushroom.edibility%>
+                    <p><u><strong>Edibility:</strong></u> <%=mushroom.edibility%>
                     </p>
                     </div>
                     </div>

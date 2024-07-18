@@ -1,33 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <title>Sign In!</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <title>Sign In!</title>
 </head>
+
 <body>
   <%- include('../partials/_navbar.ejs') %>
-    <%- include('../partials/_sidebar.ejs') %>
-    <h1>Welcome Back!</h1>
-  <form action="/auth/sign-in" method="POST">
-    <label for="username">Username:</label>
-    <input type="text" name="username" id="username" required />
-    <label for="password">Password:</label>
-    <input type="password" name="password" id="password" required />
-    <button type="submit">Sign in</button>
-  </form>
+    <div class="mainDivWrapper">
+      <%- include('../partials/_sidebar.ejs') %>
+        <div class="subMainDivWrapper">
+          <h1 id="pageHead">Much Ado About Mushrooms</h1>
+          <h1>Welcome Back!</h1>
+          <div class="loginForm">
+            <form action="/auth/sign-in" method="POST">
+              <div class="loginForm1">
+                <div class=" loginForm1a">
+                  <label for="username">Username:</label>
+                  <input type="text" name="username" id="username" required />
+                </div>
+                <div class="loginForm1b">
+                  <label for="password">Password:</label>
+                  <input type="password" name="password" id="password" required />
+                </div>
+              </div>
+              <div class="loginForm2">
+                <button type="submit">Sign in</button>
+              </div>
+            </form>
+          </div>
+        </div>
+    </div>
 
-<footer>
-  <div id="footer-left">
-      <p><a href="https://github.com/rahnajacob">An actual link to my Github!</a></p>
-      <p><a href="#">Privacy Policy</a></p>
-      <p><a href="#">About Us</a></p>
-  </div>
-  <div id="footer-disclaimer">
-      <p>Disclaimer: This website does not contain verfied information about the edibility of mushrooms - <u>please do
-        not use it as a guide!</u></p>
-  </div>
-</footer>
+    <footer>
+      <div id="footer-left">
+        <p><a href="https://github.com/rahnajacob">An actual link to my Github!</a></p>
+        <p><a href="#">Privacy Policy</a></p>
+        <p><a href="#">About Us</a></p>
+      </div>
+      <div id="footer-disclaimer">
+        <p>Disclaimer: This website does not contain verfied information about the edibility of mushrooms - <u>please do
+            not use it as a guide!</u></p>
+      </div>
+    </footer>
 </body>
+
 </html>
