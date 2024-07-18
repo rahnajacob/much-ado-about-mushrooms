@@ -36,20 +36,24 @@
                             </div>
                         </div>
                         <div class="mushOwnerBtns">
-                            <p>
-                                <%= mushroom.favouritedByUsers.length %> users agree this is a mushroom.
-                            </p>
-                            <form action="/mushrooms/<%= mushroom._id %>/favourited-by/<%= user ? "user._id" : ""%>" method="POST">
-                                <button type="submit">🍄</button>
-                            </form>
-                            <%if ((user) && (mushroom.owner._id.equals(user._id))) {%>
+                            <div class="mushFave">
+                                <p>
+                                    <%= mushroom.favouritedByUsers.length %> users agree this is a mushroom.
+                                </p>
+                                <form action="/mushrooms/<%= mushroom._id %>/favourited-by/<%= user ? " user._id" : ""
+                                    %>"
+                                    method="POST">
+                                    <button id="mushFavBtn" type="submit">🍄</button>
+                                </form>
+                            </div>
+                            <div class="mushOwnerBtnsFr" <%if ((user) && (mushroom.owner._id.equals(user._id))) {%>
                                 <form action="/mushrooms/<%=mushroom._id%>?_method=DELETE" method="POST">
                                     <button type="submit">Delete mushroom</button>
                                 </form>
                                 <button type="button"><a href="/mushrooms/<%=mushroom._id%>/edit">Edit
                                         mushroom</a></button>
-                                <!-- change CSS styling to not show underlined link -->
                                 <%}%>
+                            </div>
                         </div>
                     </div>
                 </div>

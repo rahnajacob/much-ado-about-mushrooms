@@ -18,6 +18,12 @@ const seedDatabase = async () => {
         const users = await User.create(userData)
         const mushWithOwners = mushroomData.map(mushroom => {
             mushroom.owner = users[Math.floor(Math.random() * users.length)]._id
+            mushroom.favouritedByUsers = []
+            const favouritedNum = Math.floor(Math.random() * users.length)
+            for (let i = 0; i < favouritedNum; i++) {
+                mushroom.favouritedByUsers.push(users[Math.floor(Math.random() * users.length)]._id)
+            }
+            mushroom.favouritedByUsers = [...new Set(mushroom.favouritedByUsers)]
             return mushroom
         })
         console.log(`${mushWithOwners.length} mush added`)

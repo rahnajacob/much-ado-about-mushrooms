@@ -258,6 +258,16 @@ button:hover {
     text-decoration: none;
 }
 
+.mushFave {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+
+#mushFavBtn {
+    padding: 3px;
+}
+
 /* Below: Mushroom (new.ejs add form, edit.ejs edit form) */
 
 .mushAddForm,

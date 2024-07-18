@@ -51,7 +51,12 @@ router.get("/:mushroomId", async (req, res) => {
             error.status = 404
             throw error
         }
-        res.render("mushrooms/show.ejs", {mushroom: mushroom})
+
+        const userHasFavourited = mushroom.favouritedByUsers.some(objectId => {
+            return objectId.equals(req.session._id)
+        })
+
+        res.render("mushrooms/show.ejs", {mushroom: mushroom, userHasFavourited})
     } catch (error) {
         console.log(error.message)
         if (error.status === 404) {
@@ -115,20 +120,9 @@ router.delete("/:mushroomId", async (req, res) => {
 })
 
 //Favourites route (GET route visible to all, POST route only if logged in)
-
-router.get('/:mushroomId/favourited-by/', async (req, res) => {
-    try {
-      console.log('mushroomId: ', req.params.mushroomId);
-      res.send("You need to be signed in to do this!");
-    } catch (error) {
-      console.log(error);
-      res.redirect('/mushrooms');
-    }
-  });
-
-router.post('/:mushroomId/favourited-by/:userId', async (req, res) => {
+router.post("/:mushroomId/favourited-by/:userId", async (req, res) => {
     if (!req.session.user) {
-        return res.render("mushrooms/:mushroomId")
+        return res.render(`mushrooms/${req.params.mushroomId}`)
     }
     try {
         const mushroomId = req.params.mushroomId
@@ -143,8 +137,18 @@ router.post('/:mushroomId/favourited-by/:userId', async (req, res) => {
   });
 
 //Unfavourite route
-
-
+router.delete("/:mushroomId/favourited-by/:userId", async (req, res) => {
+    try {
+        const mushroomId = req.params.mushroomId
+        await Mushroom.findByIdAndUpdate(mushroomId, {
+            $pull: { favouritedByUsers: req.session.user._id },
+        })
+        res.redirect(`/mushrooms/${req.params.mushroomId}`)
+    } catch (error) {
+        console.log(error.message)
+        res.redirect("/mushrooms")
+    }
+})
 
 //EXPORT
 module.exports = router
