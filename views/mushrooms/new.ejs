@@ -10,42 +10,60 @@
 
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <%- include('../partials/_sidebar.ejs') %>
-    <form action="/mushrooms" method="POST">
+        <div class="mainDivWrapper">
+            <%- include('../partials/_sidebar.ejs') %>
+                <div class="subMainDivWrapper">
+                    <h1 id="pageHead">Much Ado About Mushrooms</h1>
+                    <form action="/mushrooms" method="POST">
+<div class="mushAddForm">
+    <div class="mushAddWrp1">
+                        <label for="sciName">Scientific name: </label>
+                        <input type="text" name="sciName" id="sciName" required>
+                    </div>
+                        <br />
+                        <div class="mushAddWrp2">
+                        <label for="comName">Common name: </label>
+                        <input type="text" name="comName" id="comName" required>
+                        </div>
+                        <br />
+                        <div class="mushAddWrp3">
+                        <label for="image">Link to image: </label>
+                        <input type="url" name="image" id="image" required>
+                        </div>
+                        <br />
+                        <div class="mushAddWrp4">
+                        <label for="edibility">Edibility: </label>
+                        <select id="edibility" name="edibility" required>
+                            <option value="unknown">Unknown</option>
+                            <option value="edible">Edible</option>
+                            <option value="selectively-edible">Selectively Edible</option>
+                            <option value="inedible/toxic">Inedible or Toxic</option>
+                        </select>
+                    </div>
+                        <br />
+                        <div class="mushAddWrp5">
+                        <label for="description">Please describe the mushroom: </label>
+                        <textarea id="description" name="description"></textarea>
+                        </div>
+                        <br /> <br />
+                        <button id="mushAddFormBtn" type="submit">Create</button>
+                        </div>
+                    </form>
+                </div>
+        </div>
 
-        <label for="sciName">Scientific name: </label>
-        <input type="text" name="sciName" id="sciName" required>
-        <br />
-        <label for="comName">Common name: </label>
-        <input type="text" name="comName" id="comName" required>
-        <br />
-        <label for="image">Link to image: </label>
-        <input type="url" name="image" id="image" required>
-        <br />
-        <label for="edibility">Edibility: </label>
-        <select id="edibility" name="edibility" required>
-            <option value="unknown">Unknown</option>
-            <option value="edible">Edible</option>
-            <option value="selectively-edible">Selectively Edible</option>
-            <option value="inedible/toxic">Inedible or Toxic</option>
-        </select>
-        <br />
-        <label for="description">Please describe the mushroom: </label>
-        <textarea id="description" name="description"></textarea>
-        <br /> <br />
-        <button type="submit">Create</button>
-    </form>
-
-<footer>
-    <div id="footer-left">
-        <p><a href="https://github.com/rahnajacob">An actual link to my Github!</a></p>
-        <p><a href="#">Privacy Policy</a></p>
-        <p><a href="#">About Us</a></p>
-    </div>
-    <div id="footer-disclaimer">
-        <p>Disclaimer: This website does not contain verfied information about the edibility of mushrooms - <u>please do
-            not use it as a guide!</u></p>
-    </div>
-</footer>
+        <footer>
+            <div id="footer-left">
+                <p><a href="https://github.com/rahnajacob">An actual link to my Github!</a></p>
+                <p><a href="#">Privacy Policy</a></p>
+                <p><a href="#">About Us</a></p>
+            </div>
+            <div id="footer-disclaimer">
+                <p>Disclaimer: This website does not contain verfied information about the edibility of mushrooms -
+                    <u>please do
+                        not use it as a guide!</u></p>
+            </div>
+        </footer>
 </body>
+
 </html>

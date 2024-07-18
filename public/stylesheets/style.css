@@ -223,3 +223,44 @@ footer {
 .mushOwnerBtns a{
     text-decoration: none;
 }
+
+/* Below: Mushroom (new.ejs add form) */
+
+.mushAddForm {
+    display: flex;
+    flex-direction:column;
+    gap: 4vh;
+    min-width: 30vw;
+    margin-top: 10vh;
+    margin-left: -4vw;
+}
+
+.mushAddWrp1 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.mushAddWrp2 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.mushAddWrp3 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.mushAddWrp4 {
+    display: flex;
+    justify-content: space-around;
+}
+
+.mushAddWrp5 {
+    display: flex;
+    justify-content: space-around;
+}
+
+#mushAddFormBtn {
+    margin: 0 auto;
+    padding: 3%;
+}
