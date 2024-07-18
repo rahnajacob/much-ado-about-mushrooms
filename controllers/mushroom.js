@@ -114,6 +114,36 @@ router.delete("/:mushroomId", async (req, res) => {
     }
 })
 
+//Favourites route (GET route visible to all, POST route only if logged in)
+
+router.get('/:mushroomId/favourited-by/', async (req, res) => {
+    try {
+      console.log('mushroomId: ', req.params.mushroomId);
+      res.send("You need to be signed in to do this!");
+    } catch (error) {
+      console.log(error);
+      res.redirect('/mushrooms');
+    }
+  });
+
+router.post('/:mushroomId/favourited-by/:userId', async (req, res) => {
+    if (!req.session.user) {
+        return res.render("mushrooms/:mushroomId")
+    }
+    try {
+        const mushroomId = req.params.mushroomId
+        const updatedMush = await Mushroom.findByIdAndUpdate(mushroomId, {
+            $push: { favouritedByUsers: req.session.user._id },
+        })
+        res.redirect(`/mushrooms/${req.params.mushroomId}`)
+    } catch (error) {
+      console.log(error);
+      res.redirect('/mushrooms');
+    }
+  });
+
+//Unfavourite route
+
 
 
 //EXPORT
