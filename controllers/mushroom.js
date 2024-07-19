@@ -60,7 +60,7 @@ router.get("/:mushroomId", async (req, res) => {
             res.render("mushrooms/show.ejs", { mushroom: mushroom })
         }
     } catch (error) {
-        // console.log(error.message)
+        console.log(error.message)
         if (error.status === 404) {
             return res.render("404.ejs")
         }

@@ -2,21 +2,19 @@
 
 ![A screenshot of the app's landing page](./images/muchAdoAboutMushroomsLP.png)
 
-
-
 <h2>TITLE</h2>
-MUCH ADO ABOUT MUSHROOMS
+<em>MUCH ADO ABOUT MUSHROOMS</em>
 
-<h2>WHAT IS IT?<h2>
+<h2>WHAT IS IT?</h2>
 It's a place that displays some very basic information on mushrooms. No details like spore prints or stem rings (yet!) 
 
-<h3>TECHNOLOGIES USED</h3>
+<h2>TECHNOLOGIES USED</h2>
 Javascript, EJS, MongoDB and your basic HTML & CSS.
 
-<h3>ATTRIBUTIONS</h3>
-All, and I do mean <i>all</i>, of the details of the mushrooms - right from the names down to the images - were taken from <a href="https://www.mushroom.world/">Mushroom World</a>. The <i>edibility</i> attribute for the mushrooms is randomised and is not true to life. As a disclaimer once again, please do not eat wild mushrooms unless you are a trained and very confident mycologist, and <i>especially</i> not on advice from my website.
+<h2>ATTRIBUTIONS</h2>
+All, and I do mean <i>all</i>, of the details of the mushrooms - right from the names down to the images - were taken from <a href="https://www.mushroom.world/">Mushroom World</a>. The <i>edibility</i> attribute for the mushrooms on my app is randomised and is not true to life. As a disclaimer once again, please do not eat wild mushrooms unless you are a trained and very confident mycologist, and <i>especially</i> not on advice from my website.
 
-<h3>NEXT STEPS</h3>
+<h2>NEXT STEPS</h2>
 I want to include multiple other functions and data models, not least of which is the aforementioned additional details on gill type or typical habitats. The ones I have planned for later are:
 <ol>
 <li>An alphabetised index list, for easier navigation.</li>

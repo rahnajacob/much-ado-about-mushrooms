@@ -38,7 +38,7 @@
                         <div class="mushOwnerBtns">
                             <div class="mushFave">
                                 <%if (user && userHasFavourited) {%>
-                                    <form action="/mushrooms/<%= mushroom._id %>/favourited-by/<%= user ? " user._id"
+                                    <form action="/mushrooms/<%= mushroom._id %>/favourited-by/<%= user ? user._id
                                         : "" %>?_method=DELETE"
                                         method="POST">
                                         <button id="mushFavBtn" type="submit">🍄</button>
@@ -48,8 +48,8 @@
                                             mushroom.
                                     </p>
                                     <% } else { %>
-                                        <form action="/mushrooms/<%= mushroom._id %>/favourited-by/<%= user ? "
-                                            user._id" : "" %>"
+                                        <form action="/mushrooms/<%= mushroom._id %>/favourited-by/<%= user ? 
+                                            user._id : "" %>"
                                             method="POST">
                                             <button id="mushFavBtn" type="submit">🍄</button>
                                         </form>
@@ -74,7 +74,7 @@
         </div>
         <footer>
             <div id="footer-left">
-                <p><a href="https://github.com/rahnajacob">An actual link to my Github!</a></p>
+                <p><a href="https://github.com/rahnajacob" target="_blank" rel="noopener noreferrer">An actual link to my Github!</a></p>
                 <p><a href="#">Privacy Policy</a></p>
                 <p><a href="#">About Us</a></p>
             </div>
