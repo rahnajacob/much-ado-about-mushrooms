@@ -10,9 +10,9 @@ const Mushroom = require("../models/mushroom.js")
 router.get("/", async (req, res) => {
     try {
         const mushrooms = await Mushroom.find()
-        res.render("mushrooms/index.ejs", {mushrooms: mushrooms})
+        res.render("mushrooms/index.ejs", { mushrooms: mushrooms })
     } catch (error) {
-        console.log(error)
+        // console.log(error)
         res.redirect("/")
     }
 })
@@ -25,7 +25,7 @@ router.get("/new", (req, res) => {
     try {
         res.render("mushrooms/new.ejs")
     } catch (error) {
-        console.log(error.message)
+        // console.log(error.message)
         res.redirect("/")
     }
 })
@@ -36,8 +36,8 @@ router.post("/", async (req, res) => {
         await Mushroom.create(req.body)
         res.redirect("/mushrooms")
     } catch (error) {
-        console.log(error.message)
-        res.redirect("/listings/new.ejs", {errorMessage: error.message})
+        // console.log(error.message)
+        res.redirect("/listings/new.ejs", { errorMessage: error.message })
     }
 })
 
@@ -46,21 +46,21 @@ router.get("/:mushroomId", async (req, res) => {
     try {
         const mushroomId = req.params.mushroomId
         const mushroom = await Mushroom.findById(req.params.mushroomId)
-        if (!mushroom){
+        if (!mushroom) {
             const error = new Error("Mushroom not found!")
             error.status = 404
             throw error
         }
         if (req.session.user) {
-        const userHasFavourited = mushroom.favouritedByUsers.some(objectId => {
-            return objectId.equals(req.session.user._id)
-        })
-        res.render("mushrooms/show.ejs", {mushroom: mushroom, userHasFavourited: userHasFavourited})
-    } else {
-        res.render("mushrooms/show.ejs", {mushroom: mushroom})
-    }
+            const userHasFavourited = mushroom.favouritedByUsers.some(objectId => {
+                return objectId.equals(req.session.user._id)
+            })
+            res.render("mushrooms/show.ejs", { mushroom: mushroom, userHasFavourited: userHasFavourited })
+        } else {
+            res.render("mushrooms/show.ejs", { mushroom: mushroom })
+        }
     } catch (error) {
-        console.log(error.message)
+        // console.log(error.message)
         if (error.status === 404) {
             return res.render("404.ejs")
         }
@@ -75,12 +75,12 @@ router.get("/:mushroomId/edit", async (req, res) => {
         if (!mushroom) throw new Error("Mushroom not found!")
 
         if (mushroom.owner.equals(req.session.user._id)) {
-            res.render("mushrooms/edit.ejs", {mushroom: mushroom})
+            res.render("mushrooms/edit.ejs", { mushroom: mushroom })
         } else {
             res.redirect(`/mushrooms/${mushroom._id}`)
         }
     } catch (error) {
-        console.log(error.message)
+        // console.log(error.message)
         res.redirect("/mushrooms")
     }
 })
@@ -98,7 +98,7 @@ router.put("/:mushroomId", async (req, res) => {
             res.redirect(`/mushrooms/${mushToUpdate._id}`)
         }
     } catch (error) {
-        console.log(error.message)
+        // console.log(error.message)
         res.redirect("/mushrooms")
     }
 })
@@ -116,7 +116,7 @@ router.delete("/:mushroomId", async (req, res) => {
             res.redirect("/mushrooms")
         }
     } catch (error) {
-        console.log(error.message)
+        // console.log(error.message)
         res.redirect("/")
     }
 })
@@ -133,10 +133,10 @@ router.post("/:mushroomId/favourited-by/:userId", async (req, res) => {
         })
         res.redirect(`/mushrooms/${req.params.mushroomId}`)
     } catch (error) {
-      console.log(error);
-      res.redirect('/mushrooms');
+        // console.log(error);
+        res.redirect('/mushrooms');
     }
-  });
+});
 
 //Unfavourite route
 router.delete("/:mushroomId/favourited-by/:userId", async (req, res) => {
@@ -147,7 +147,7 @@ router.delete("/:mushroomId/favourited-by/:userId", async (req, res) => {
         })
         res.redirect(`/mushrooms/${req.params.mushroomId}`)
     } catch (error) {
-        console.log(error.message)
+        // console.log(error.message)
         res.redirect("/mushrooms")
     }
 })

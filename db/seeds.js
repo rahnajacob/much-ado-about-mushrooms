@@ -29,9 +29,8 @@ const seedDatabase = async () => {
         console.log(`${mushWithOwners.length} mush added`)
         const mushrooms = await Mushroom.create(mushWithOwners)
         await mongoose.connection.close()
-        console.log("Seed conn closed")
     } catch (error) {
-        console.log(error.message)
+        // console.log(error.message)
         await mongoose.connection.close()
     }
 }

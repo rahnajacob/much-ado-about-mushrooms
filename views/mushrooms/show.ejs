@@ -16,9 +16,9 @@
             <%- include('../partials/_sidebar.ejs') %>
                 <div class="subMainDivWrapper">
                     <h1 id="pageHead">Much Ado About Mushrooms</h1>
-                    <h2 class="mushShowSciName"><strong>
-                            <%= mushroom.sciName.toUpperCase()%>
-                        </strong>
+                    <h2 class="mushShowSciName"><strong><u>
+                                <%= mushroom.sciName.toUpperCase()%>
+                            </u></strong>
                     </h2>
                     <h3><strong>Common name: <%=mushroom.comName%></strong>
                     </h3>
@@ -38,24 +38,25 @@
                         <div class="mushOwnerBtns">
                             <div class="mushFave">
                                 <%if (user && userHasFavourited) {%>
-                                    <form action="/mushrooms/<%= mushroom._id %>/favourited-by/<%= user ? " user._id" : ""
-                                        %>?_method=DELETE"
+                                    <form action="/mushrooms/<%= mushroom._id %>/favourited-by/<%= user ? " user._id"
+                                        : "" %>?_method=DELETE"
                                         method="POST">
                                         <button id="mushFavBtn" type="submit">🍄</button>
                                     </form>
                                     <p>
-                                        You and <%= (mushroom.favouritedByUsers.length)-1 %> other users agree this is a mushroom.
-                                    </p> 
-                                <% } else { %>
-                                    <form action="/mushrooms/<%= mushroom._id %>/favourited-by/<%= user ? " user._id" : ""
-                                        %>"
-                                        method="POST">
-                                        <button id="mushFavBtn" type="submit">🍄</button>
-                                    </form>
-                                    <p>
-                                        <%= mushroom.favouritedByUsers.length %> users agree this is a mushroom.
+                                        You and <%= (mushroom.favouritedByUsers.length)-1 %> other users agree this is a
+                                            mushroom.
                                     </p>
-                                <% } %>
+                                    <% } else { %>
+                                        <form action="/mushrooms/<%= mushroom._id %>/favourited-by/<%= user ? "
+                                            user._id" : "" %>"
+                                            method="POST">
+                                            <button id="mushFavBtn" type="submit">🍄</button>
+                                        </form>
+                                        <p>
+                                            <%= mushroom.favouritedByUsers.length %> users agree this is a mushroom.
+                                        </p>
+                                        <% } %>
                             </div>
                             <div class="mushOwnerBtnsFr">
                                 <%if ((user) && (mushroom.owner._id.equals(user._id))) {%>
