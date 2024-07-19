@@ -51,12 +51,10 @@ router.get("/:mushroomId", async (req, res) => {
             error.status = 404
             throw error
         }
-
         const userHasFavourited = mushroom.favouritedByUsers.some(objectId => {
-            return objectId.equals(req.session._id)
+            return objectId.equals(req.session.user._id)
         })
-
-        res.render("mushrooms/show.ejs", {mushroom: mushroom, userHasFavourited})
+        res.render("mushrooms/show.ejs", {mushroom: mushroom, userHasFavourited: userHasFavourited})
     } catch (error) {
         console.log(error.message)
         if (error.status === 404) {
@@ -119,7 +117,7 @@ router.delete("/:mushroomId", async (req, res) => {
     }
 })
 
-//Favourites route (GET route visible to all, POST route only if logged in)
+//Favourites route
 router.post("/:mushroomId/favourited-by/:userId", async (req, res) => {
     if (!req.session.user) {
         return res.render(`mushrooms/${req.params.mushroomId}`)
