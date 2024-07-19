@@ -51,10 +51,14 @@ router.get("/:mushroomId", async (req, res) => {
             error.status = 404
             throw error
         }
+        if (req.session.user) {
         const userHasFavourited = mushroom.favouritedByUsers.some(objectId => {
             return objectId.equals(req.session.user._id)
         })
         res.render("mushrooms/show.ejs", {mushroom: mushroom, userHasFavourited: userHasFavourited})
+    } else {
+        res.render("mushrooms/show.ejs", {mushroom: mushroom})
+    }
     } catch (error) {
         console.log(error.message)
         if (error.status === 404) {

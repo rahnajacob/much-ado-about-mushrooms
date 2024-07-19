@@ -37,7 +37,7 @@
                         </div>
                         <div class="mushOwnerBtns">
                             <div class="mushFave">
-                                <%if (userHasFavourited) {%>
+                                <%if (user && userHasFavourited) {%>
                                     <form action="/mushrooms/<%= mushroom._id %>/favourited-by/<%= user ? " user._id" : ""
                                         %>?_method=DELETE"
                                         method="POST">
