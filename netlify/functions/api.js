@@ -7,7 +7,6 @@ const methodOverride = require("method-override")
 const morgan = require("morgan")
 const session = require("express-session")
 const mongoStore = require("connect-mongo")
-const multer = require('multer') //part of image upload stretch
 const passUserToView = require("../../middleware/pass-user-to-view.js");
 const IsSignedIn = require("../../middleware/is-signed-in.js");
 const Mushroom = require("../../models/mushroom.js")
@@ -18,9 +17,6 @@ const mushController = require("../../controllers/mushroom.js")
 
 //CONSTANTS
 const app = express()
-const port = process.env.PORT ? process.env.PORT : "3000"
-const path = require('path')
-const upload = multer({ dest: 'uploads/' }) //part of image upload stretch
 
 //MIDDLEWARE
 app.use(express.urlencoded({ extended: false }))
@@ -70,6 +66,7 @@ const connect = async () => {
     }
 }
 
+connect()
+
 module.exports.handler = serverless(app);
 
-connect()
