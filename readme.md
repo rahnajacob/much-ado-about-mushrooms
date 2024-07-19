@@ -24,3 +24,5 @@ I want to include multiple other functions and data models, not least of which i
 <li>A recipe section for mushrooms that are (a) safely edible, and (b) do not have dangerous side effect if improperly prepared.</li>
 </ol>
 
+<h2>LINK TO THE APP</h2>
+<p><a href="https://main--muchadoaboutmushrooms.netlify.app/" target="_blank" rel="noopener noreferrer">Much Ado About Mushrooms</a></p>
